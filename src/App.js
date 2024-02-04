@@ -13,15 +13,9 @@ function App() {
   
   <Router>
       <div className="App">
-        <nav>
-          <ul>
-              <button><Link to="/">Home</Link></button>
-              <button><Link to="/ChatBot">Chatbot</Link></button>
-              <button><Link to="/Calendar">Calendar</Link></button>
-          </ul>
-        </nav>
+             
 
-        <hr />
+       
 
         <Routes> {/* Wrap your routes in a <Routes> component */}
           <Route path="/" element={<HomePage />} />
