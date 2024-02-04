@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ChatBot.css'; 
+import './Chatbot.css'; 
 import { Link } from 'react-router-dom';
 
 function ChatBot() {
