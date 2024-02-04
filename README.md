@@ -1,3 +1,4 @@
+![TAU-2](https://github.com/TauScheduler/Tau/assets/115187680/3f24a21a-5141-440f-8f2a-e675abf7ad9d)
 ## Black Wings 2024 Hackathon
 
 ## Inspiration
@@ -5,6 +6,9 @@ We recognize the unique struggles faced by individuals with ADHD or executive fu
 
 ## What it does
 Tau is a revolutionary personal assistant that goes beyond conventional task management. It understands and adapts to an individual's preferred study style, predicts task durations, seamlessly integrates with calendars, and provides analytical insights. Tau not only assists in planning and organizing but also serves as a motivational companion, helping users stay on track and navigate the complexities of their daily lives with confidence.
+
+![chatbot](https://github.com/TauScheduler/Tau/assets/115187680/540fbec2-1c5d-4cf9-90fa-7eb18a203e97)
+
 
 ## How we built it
 We developed a web app using React Native and JavaScript. The domain for our app was registered through GoDaddy. 
