@@ -1,4 +1,3 @@
-![TAU-2](https://github.com/TauScheduler/Tau/assets/115187680/3f24a21a-5141-440f-8f2a-e675abf7ad9d)
 ## Black Wings 2024 Hackathon
 
 ## Inspiration
@@ -30,3 +29,5 @@ Our main priority is to improve and launch the GPT chatbot feature, which will e
 We are also working hard to get the permission for Google Calendar feature, which will let Tau connect with users’ calendars and help them manage their tasks more easily. This is very important for us, because we want Tau to be a complete personal assistant that helps users simplify and organize their lives.
 
 Our team is very passionate and committed to making these improvements happen. We are excited to keep supporting people with ADHD with Tau’s new and improved features, which will make it an even more helpful and reliable partner for their success. Stay tuned for more updates as we enter this new and exciting stage of Tau’s journey!
+
+![TAU-2](https://github.com/TauScheduler/Tau/assets/115187680/3f24a21a-5141-440f-8f2a-e675abf7ad9d)
