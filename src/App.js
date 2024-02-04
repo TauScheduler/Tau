@@ -6,7 +6,6 @@ import HomePage from './Components/HomePage';
 import ChatBot from './Components/Chatbot';
 import Calendar from './Components/Calendar';
 import Login from './Components/Login';
-import MeetingsPage from './Components/MeetingsPage';
 import SignUp from './Components/SignUp';
 
 

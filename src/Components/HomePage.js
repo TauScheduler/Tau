@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; 
 import Home from '../sunrise.png';
+//import Info from './Info';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faTasks, faBookReader, faHourglassHalf, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 
 // Header component (reusable for both pages)
@@ -20,9 +24,11 @@ const Header = () => (
 
 // Feature component for the four features at the bottom of the homepage
 const Feature = ({ icon, title, description }) => (
-  <div className="feature">
-    <i className={icon}></i> {/* Assuming you're using a font icon library */}
-    <h3>{title}</h3>
+  <div className="text-center">
+    <div className="mb-4">
+      <FontAwesomeIcon icon={icon} size="3x" />
+    </div>
+    <h3 className="text-xl mb-2">{title}</h3>
     <p>{description}</p>
   </div>
 );
@@ -56,17 +62,23 @@ const Homepage = () => (
     </div>
 
     <div className="feature-grid">
-      <div className="feature">
-        <i className="fas fa-rocket"></i>
-        <h2>Built for speed</h2>
-        <p>Instantly sync your notes across devices</p>
-      </div>
-      <div className="feature">
-        <i className="fas fa-project-diagram"></i>
-        <h2>Networked notes</h2>
-        <p>Form a graph of ideas with backlinked notes</p>
-      </div>
+    <Feature
+          icon={faCalendarAlt}
+          title="Automated Calendar Entries"
+          description="with Google Calendar Integration"
+        />
+      <Feature
+          icon={faTasks}
+          title="Schedule Tasks"
+          description="from your text messages"
+        />
       {/* Add similar feature elements */}
+    </div>
+
+    <div className="feature-grid">
+      {/* ... (existing feature elements) */}
+      {/* Add the App component here */}
+
     </div>
 
     <footer className="footer">

@@ -3,7 +3,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background: #040015;
-    color: white;
+    color: white !important;
   }
   
   .nav {
