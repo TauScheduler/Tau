@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+## Black Wings 2024 Hackathon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Inspiration
+We recognize the unique struggles faced by individuals with ADHD or executive functioning challenges, especially when it comes to time management. The inherent difficulties in estimating task durations, remembering scheduled events, and maintaining a consistent focus on priorities can often lead to a sense of overwhelm and frustration.
 
-## Available Scripts
+## What it does
+Tau is a revolutionary personal assistant that goes beyond conventional task management. It understands and adapts to an individual's preferred study style, predicts task durations, seamlessly integrates with calendars, and provides analytical insights. Tau not only assists in planning and organizing but also serves as a motivational companion, helping users stay on track and navigate the complexities of their daily lives with confidence.
 
-In the project directory, you can run:
+## How we built it
+We developed a web app using React Native and JavaScript. The domain for our app was registered through GoDaddy. 
 
-### `npm start`
+## Challenges we ran into
+In the development process, we delved into exploring the capabilities of GPT for NLP text processing and chatbot integration. However, due to time constraints, we encountered challenges in fully implementing and refining this aspect of our project. Despite our efforts, the integration of GPT for seamless chatbot interaction remains a work in progress.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Additionally, we planned to integrate Google Calendar in Tau but unfortunately, we discovered that Google Calendar integration requires approval.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Accomplishments that we're proud of
+We are proud of our ability to build a real react app in a very short time, especially because it was our first time making a react app from scratch.
 
-### `npm test`
+## What we learned
+This was an opportunity for us to delve deeper into GPT and chatbots. Building Tau not only expanded our technical skills but also enhanced our appreciation for the impact these technologies have on creating a better user experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What's next for Tau
+Our main priority is to improve and launch the GPT chatbot feature, which will enable smooth and smart conversations. We want to use the power of natural language processing to give users a more natural and customized experience.
 
-### `npm run build`
+We are also working hard to get the permission for Google Calendar feature, which will let Tau connect with users’ calendars and help them manage their tasks more easily. This is very important for us, because we want Tau to be a complete personal assistant that helps users simplify and organize their lives.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Our team is very passionate and committed to making these improvements happen. We are excited to keep supporting people with ADHD with Tau’s new and improved features, which will make it an even more helpful and reliable partner for their success. Stay tuned for more updates as we enter this new and exciting stage of Tau’s journey!
