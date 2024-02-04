@@ -12,7 +12,7 @@ function ChatBot() {
   useEffect(() => {
     setTimeout(() => {
       // Send a bot message when the component mounts
-      const botMessage = "Howdy, I'm Tau! How can I assist you?";
+      const botMessage = "Hi, I'm Tau! I'm an AI-powered scheduling assistant. Text me about a task or upcoming event and I'll take care of scheduling it for you.";
       setMessages([{ text: botMessage, isUserMessage: false }]);
     }, 1000);
     
