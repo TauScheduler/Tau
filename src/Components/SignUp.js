@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import TauLogo from '../sunrise.png'; 
+import TauLogo from '2024/Tau/src/TAU-2.png'; 
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
