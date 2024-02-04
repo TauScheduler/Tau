@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Chatbot.css'; 
 import { Link } from 'react-router-dom';
 
 function ChatBot() {
   const [userMessages, setUserMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const messagesEndRef = useRef(null);  // Reference to keep track of the end of the messages
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  useEffect(() => {
+    scrollToBottom();  // Scroll to bottom whenever userMessages updates
+  }, [userMessages]);
 
   const handleSendMessage = () => {
     if (newMessage.trim() !== '') {
@@ -29,7 +38,7 @@ function ChatBot() {
   };
 
   return (
-    <div className="App">
+    <div className="Chat">
       <div className="chat-container">
         <div className="chat-header">
           <button className="calendar-button">Calendar</button>
@@ -40,6 +49,7 @@ function ChatBot() {
               {message.text}
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
       </div>
       <div className="chat-input">

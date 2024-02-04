@@ -1,4 +1,13 @@
 /* ChatBot.css */
+.Chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  align-items: center;
+  justify-content: center;
+  
+}
 
 .chat-container {
   background: #040015;
@@ -7,7 +16,7 @@
   border-radius: 0.5rem;
   max-width: 80%;
   margin: 2rem auto;
-  height: 70vh; /* Set the container to 100% viewport height */
+  height: 70vh; /* Adjust height as needed */
 }
 
 .chat-header {
@@ -16,7 +25,7 @@
 }
 
 .chat-messages {
-  flex: 1; /* Make the message container grow and take available space */
+  flex-grow: 1; /* Grow to take available space */
   overflow-y: auto; /* Add vertical scroll when needed */
 }
 
@@ -37,13 +46,12 @@
 }
 
 .chat-input {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  width: 90%;
-  justify-content: center;
-  flex-direction: column; /* Change the flex direction to column */
-  align-items: center; /* Center horizontally */
+  position: fixed; /* Fixed at the bottom */
+  bottom: 0; /* Align to bottom */
+  width: 80%; /* Match the width of chat-container */
+  background: #040015; /* Match the background of chat-container */
+  padding: 1rem; /* Padding as needed */
+  border-top: 2px solid #8a63d2; /* A top border for distinction */
 }
 
 .input-container {
