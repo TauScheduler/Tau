@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css'; 
 import TauLogo from '../sunrise.png'; 
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -24,7 +25,8 @@ function Login() {
         </form>
 
         <p className="register-link">
-          Don't have an account? <a href="#">Sign Up</a>
+        <Link to="/SignUp"> Don't have an account? Sign Up</Link>
+          
         </p>
       </div>
     </div>
