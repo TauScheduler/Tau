@@ -61,7 +61,7 @@ const Homepage = () => {
 
       <header className="hero">
         <h1><span className={fade}>{titles[titleIndex]}</span> with Tau</h1>
-        <p>Your AI Personal Assistant, Specifically Designed for ADHD Time Management – Predicting, Organizing, and Empowering You to Seize Control of Your Day!</p>
+        <p>Your ADHD-Focused AI Assistant, Predicting, Organizing, and Empowering Your Day!</p>
         <Link to="/ChatBot">
           <button className="bigger-button">Talk with Tau</button>
         </Link>
