@@ -7,16 +7,19 @@ function ChatBot() {
   const [newMessage, setNewMessage] = useState('');
 
   const handleSendMessage = () => {
-    const userMessage = { type: 'user', text: newMessage };
-    setUserMessages([...userMessages, userMessage]);
+    if (newMessage.trim() !== '') {
+      const userMessage = { type: 'user', text: newMessage };
+      setUserMessages([...userMessages, userMessage]);
+      setNewMessage('');
+    }
 
     // Handle your logic for sending the message to a server or performing other actions
 
-    setTimeout(() => {
-      const botMessage = { type: 'bot', text: 'I am a chatbot, and I received your message!' };
-      setUserMessages([...userMessages, botMessage]);
-      setNewMessage('');
-    }, 500);
+    // setTimeout(() => {
+    //   const botMessage = { type: 'bot', text: 'I am a chatbot, and I received your message!' };
+    //   setUserMessages([...userMessages, botMessage]);
+    //   setNewMessage('');
+    // }, 500);
   };
 
   const handleKeyPress = (e) => {
@@ -38,7 +41,9 @@ function ChatBot() {
             </div>
           ))}
         </div>
-        <div className="chat-input">
+      </div>
+      <div className="chat-input">
+        <div className="input-container">
           <input
             type="text"
             placeholder="Type your message..."
