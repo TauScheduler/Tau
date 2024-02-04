@@ -51,29 +51,28 @@ function ChatBot() {
       <nav className="nav">
         <div className="logo-container">
         <img src={TauLogo} alt="Tau Logo" />
-      </div>
-        <div className="buttons">
-        <Link to="/">
-          <button className="button">Home</button>
-        </Link>
-        <Link to="/Calendar">
-          <button className="button">Calendar</button>
-        </Link>
-        <Link to="/Login">
-          <button className="button">Login</button>
-        </Link>
-          
+        </div>
+          <div className="buttons">
+          <Link to="/">
+            <button className="button">Home</button>
+          </Link>
+          <Link to="/Calendar">
+            <button className="button">Calendar</button>
+          </Link>
+          <Link to="/Login">
+            <button className="button">Login</button>
+          </Link>
         </div>
       </nav>
-    <div className="Chat">
-      <div className="message-area">
-        {messages.map((message, index) => (
-          <Message key={index} text={message.text} isUserMessage={message.isUserMessage} />
-        ))}
-        <div ref={messagesEndRef}></div>
+      <div className="Chat">
+        <div className="message-area">
+          {messages.map((message, index) => (
+            <Message key={index} text={message.text} isUserMessage={message.isUserMessage} />
+          ))}
+          <div ref={messagesEndRef}></div>
+        </div>
+        <ChatInput onSendMessage={handleSendMessage} />
       </div>
-      <ChatInput onSendMessage={handleSendMessage} />
-    </div>
     </div>
   );
 }
