@@ -23,6 +23,18 @@ body {
     gap: 1rem;
   }
 
+  .feature-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-around; /* Distribute space around items */
+  }
+  
+  .feature-container {
+    flex-basis: calc(33.33% - 5px); /* Adjust the width of each container */
+    margin-bottom: 20px; /* Adjust the margin between containers */
+  }
+  
+
   
   
   .button {

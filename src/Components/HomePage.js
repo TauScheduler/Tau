@@ -33,6 +33,7 @@ const Feature = ({ icon, title, description }) => (
   </div>
 );
 
+
 // Homepage component
 const Homepage = () => (
     <div>
@@ -50,7 +51,7 @@ const Homepage = () => (
     </nav>
 
     <header className="hero">
-      <h1> Plan with Tau</h1>
+    <h1>Plan with Tau</h1>
       <p>Never miss a deadline, meeting or ???</p>
       <Link to="/ChatBot">
         <button className="bigger-button">Talk with Tau</button>
@@ -58,21 +59,39 @@ const Homepage = () => (
 
     </header>
     <div className="image-container">
-      <img src={Home} width="1000" height = "400" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
+      <img src={Home} width="1500" height = "250" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
     </div>
-
+    
+    <h1> What can you do with Tau?</h1>
     <div className="feature-grid">
-    <Feature
+      <div className="feature-container">
+        <Feature
           icon={faCalendarAlt}
           title="Automated Calendar Entries"
           description="with Google Calendar Integration"
         />
-      <Feature
+      </div>
+      <div className="feature-container">
+        <Feature
           icon={faTasks}
-          title="Schedule Tasks"
+          title="Dynamic Task Scheduling"
           description="from your text messages"
         />
-      {/* Add similar feature elements */}
+      </div>
+      <div className="feature-container">
+        <Feature
+          icon={faBookReader}
+          title="Study Style Integration"
+          description="personalized to you"
+        />
+      </div>
+      <div className="feature-container">
+        <Feature
+          icon={faHourglassHalf}
+          title="Task Duration Prediction"
+          description="to increase productivity"
+        />
+      </div>
     </div>
 
     <div className="feature-grid">
