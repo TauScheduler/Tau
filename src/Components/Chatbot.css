@@ -49,8 +49,9 @@
 .input-container {
   display: flex;
   flex: 1; /* Occupy available space within the container */
-  width: 80%;
+  width: 80% !important;
   margin-left: 7rem;
+  min-height: 5vh;
 }
 
 .chat-input input {
@@ -71,6 +72,7 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   margin-left: 1rem;
+  max-height: 5.5vh;
 }
 
 .chat-input button:hover {

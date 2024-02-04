@@ -46,7 +46,7 @@ function ChatBot() {
         <div className="input-container">
           <input
             type="text"
-            placeholder="Type your message..."
+            placeholder="Message Tau..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             onKeyDown={handleKeyPress}
