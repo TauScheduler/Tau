@@ -1,7 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.css'; 
-
-
 import Home from '../sunrise.png';
 
 
@@ -34,7 +33,9 @@ const Homepage = () => (
     <nav className="nav">
       <div className="logo">Tau</div>
       <div className="buttons">
-        <button className="button">Talk with Tau</button>
+      <Link to="/chat">
+      <button className="button">Talk with Tau</button>
+    </Link>
         <button className="button">Login</button>
         
       </div>

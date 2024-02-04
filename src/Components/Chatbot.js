@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './ChatApp.css'; 
+import './ChatBot.css'; 
+import { Link } from 'react-router-dom';
 
-function ChatApp() {
+function ChatBot() {
   const [userMessages, setUserMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
 
@@ -45,4 +46,4 @@ function ChatApp() {
   );
 }
 
-export default ChatApp;
+export default ChatBot;
