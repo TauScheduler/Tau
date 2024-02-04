@@ -10,7 +10,7 @@ function ChatBot() {
   useEffect(() => {
     setTimeout(() => {
       // Send a bot message when the component mounts
-      const botMessage = "Howdy! How can I assist you?";
+      const botMessage = "Howdy, I'm Tau! How can I assist you?";
       setMessages([{ text: botMessage, isUserMessage: false }]);
     }, 1000);
     
@@ -27,7 +27,7 @@ function ChatBot() {
     }
   
     // Check if the user's message is "thanks"
-    if (newMessage.trim().toLowerCase() === 'thanks') {
+    if (newMessage.trim().toLowerCase() === 'thanks' || newMessage.trim().toLowerCase() === 'thank you') {
       setTimeout(() => {
         // This is where you could integrate a real chatbot API if desired
         const botResponse = "You're welcome! Happy to help :)";
