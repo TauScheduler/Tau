@@ -1,0 +1,23 @@
+.message {
+  max-width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  color: white;
+}
+
+.user-message {
+  border-radius: 20px 20px 0 20px;
+  margin-left: auto;
+  background-color: #4e5fea;
+}
+
+.bot-message {
+  border-radius: 20px 20px 20px 0px;
+  margin-right: auto;
+  background-color: white;
+  color: black;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}

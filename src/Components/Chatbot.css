@@ -1,90 +1,42 @@
-/* ChatBot.css */
+/* General App Styles */
+body {
+  background-color: black;
+}
+
 .Chat {
+  max-width: 50vw;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
-  align-items: center;
-  justify-content: center;
-  
-}
-
-.chat-container {
+  justify-content: space-between;
   background: #040015;
-  color: white;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  max-width: 80%;
-  margin: 2rem auto;
-  height: 70vh; /* Adjust height as needed */
 }
 
-.chat-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.chat-messages {
-  flex-grow: 1; /* Grow to take available space */
-  overflow-y: auto; /* Add vertical scroll when needed */
-}
-
-.chat-messages .user {
-  background: #8a63d2;
-  color: white;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  border-radius: 0.25rem;
-}
-
-.chat-messages .bot {
-  background: #2c3e50;
-  color: white;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  border-radius: 0.25rem;
-}
-
-.chat-input {
-  position: fixed; /* Fixed at the bottom */
-  bottom: 0; /* Align to bottom */
-  width: 80%; /* Match the width of chat-container */
-  background: #040015; /* Match the background of chat-container */
-  padding: 1rem; /* Padding as needed */
-  border-top: 2px solid #8a63d2; /* A top border for distinction */
-}
-
-.input-container {
+.message-area {
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px;
   display: flex;
-  flex: 1; /* Occupy available space within the container */
-  width: 80% !important;
-  margin-left: 7rem;
-  min-height: 5vh;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.chat-input input {
-  flex: 1;
-  padding: 1rem;
-  border: 1px solid #8a63d2;
+/* Scrollbar Styles */
+.message-area::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust the width to your preference */
+  background: transparent; /* Set the background to transparent */
+  display: none; /* Hide the scrollbar */
+}
+
+.message-area::-webkit-scrollbar-thumb {
+  background: #ccc;
   border-radius: 10px;
-  color: white;
-  background: transparent;
 }
 
-.chat-input button {
-  background-color: transparent;
-  color: #8a63d2;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border: 2px solid #8a63d2;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  margin-left: 1rem;
-  max-height: 5.5vh;
-}
-
-.chat-input button:hover {
-  background-color: #8a63d2;
-  color: white;
-  border-color: transparent;
+.message-area::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
 }

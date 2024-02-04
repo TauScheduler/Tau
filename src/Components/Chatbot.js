@@ -1,69 +1,42 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Chatbot.css'; 
-import { Link } from 'react-router-dom';
+import ChatInput from './ChatInput';
+import Message from './Message';
 
 function ChatBot() {
-  const [userMessages, setUserMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-  const messagesEndRef = useRef(null);  // Reference to keep track of the end of the messages
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
+  const [messages, setMessages] = React.useState([]);
+  const messagesEndRef = useRef(null); // Add this line
 
   useEffect(() => {
-    scrollToBottom();  // Scroll to bottom whenever userMessages updates
-  }, [userMessages]);
+    // Scroll to the bottom of the message area when messages change
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = (newMessage) => {
     if (newMessage.trim() !== '') {
-      const userMessage = { type: 'user', text: newMessage };
-      setUserMessages([...userMessages, userMessage]);
-      setNewMessage('');
+      setMessages([...messages, { text: newMessage, isUserMessage: true }]);
     }
 
-    // Handle your logic for sending the message to a server or performing other actions
+    // Here you would implement the logic to get a response from your chatbot
 
-    // setTimeout(() => {
-    //   const botMessage = { type: 'bot', text: 'I am a chatbot, and I received your message!' };
-    //   setUserMessages([...userMessages, botMessage]);
-    //   setNewMessage('');
-    // }, 500);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSendMessage();
-    }
+    // Simulate a delay for the bot response
+    setTimeout(() => {
+      // This is where you could integrate a real chatbot API if desired
+      const botMessage = "Message Received! :)";
+      setMessages((prevMessages) => [...prevMessages, { text: botMessage, isUserMessage: false }]);
+    }, 2000); // 2000ms delay
+    
   };
 
   return (
     <div className="Chat">
-      <div className="chat-container">
-        <div className="chat-header">
-          <button className="calendar-button">Calendar</button>
-        </div>
-        <div className="chat-messages">
-          {userMessages.map((message, index) => (
-            <div key={index} className={message.type}>
-              {message.text}
-            </div>
-          ))}
-          <div ref={messagesEndRef} />
-        </div>
+      <div className="message-area">
+        {messages.map((message, index) => (
+          <Message key={index} text={message.text} isUserMessage={message.isUserMessage} />
+        ))}
+        <div ref={messagesEndRef}></div>
       </div>
-      <div className="chat-input">
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="Message Tau..."
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          <button onClick={handleSendMessage}>Send</button>
-        </div>
-      </div>
+      <ChatInput onSendMessage={handleSendMessage} />
     </div>
   );
 }
