@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css'; // You will create your CSS styles here
 import './HomePage.css'; 
 
 
-import Home from './sunrise.png';
+import Home from '../sunrise.png';
 
 
 // Header component (reusable for both pages)
