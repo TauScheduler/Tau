@@ -1,6 +1,6 @@
 /* Login.css */
 
-body {
+/* .login-body {
   font-family: 'Open Sans', sans-serif;
   background: #040015;
   color: white;
@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
+} */
 
 .login-container {
   background-color: #8a63d2;
