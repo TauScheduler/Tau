@@ -4,6 +4,7 @@ import TauLogo from '../sunrise.png';
 
 function Login() {
   return (
+    <div className="Harsheesha">
     <div className="login-container">
       <div className="logo-container">
         <h1>Tau</h1>
@@ -26,6 +27,7 @@ function Login() {
           Don't have an account? <a href="#">Sign Up</a>
         </p>
       </div>
+    </div>
     </div>
   );
 }

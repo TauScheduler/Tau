@@ -5,7 +5,7 @@
 .login-body {
   font-family: 'Open Sans', sans-serif;
   background: #040015;
-  color: white;
+  color: black;
   margin: 0;
   display: flex;
   align-items: center;
@@ -29,6 +29,11 @@
   transform: translate(-50%, -50%);
 }
 
+.Harsheesha {
+  height: 100vh;
+  width: 100vw;
+  background-color: #040015;
+}
 
 .logo-container {
   text-align: center;
@@ -57,7 +62,7 @@ label {
   color: white;
 }
 
-input {
+.form-container input {
   padding: 8px;
   margin-bottom: 16px;
   background-color: #fff; 
@@ -66,7 +71,7 @@ input {
   border-radius: 4px;
 }
 
-button {
+.form-container button {
   background-color:#4a326f ;
   color: white; 
   padding: 10px;
@@ -76,7 +81,7 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-button:hover {
+.form-container button:hover {
   background-color: white;
   color: #4a326f;
 }
