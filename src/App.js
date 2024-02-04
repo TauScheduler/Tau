@@ -15,15 +15,9 @@ function App() {
       <div className="App">
         <nav>
           <ul>
-            <li>
               <button><Link to="/">Home</Link></button>
-            </li>
-            <li>
               <button><Link to="/ChatBot">Chatbot</Link></button>
-            </li>
-            <li>
               <button><Link to="/Calendar">Calendar</Link></button>
-            </li>
           </ul>
         </nav>
 

@@ -33,7 +33,7 @@ const Homepage = () => (
     <nav className="nav">
       <div className="logo">Tau</div>
       <div className="buttons">
-      <Link to="/chat">
+      <Link to="/ChatBot">
       <button className="button">Talk with Tau</button>
     </Link>
         <button className="button">Login</button>
