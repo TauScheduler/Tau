@@ -1,6 +1,6 @@
 /* General App Styles */
-body {
-  background-color: black;
+html, body {
+  background-color: #040015;
 }
 
 .Chat {
@@ -9,7 +9,7 @@ body {
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,9 +27,9 @@ body {
 
 /* Scrollbar Styles */
 .message-area::-webkit-scrollbar {
-  width: 0.5rem; /* Adjust the width to your preference */
-  background: transparent; /* Set the background to transparent */
-  display: none; /* Hide the scrollbar */
+  width: 0.5rem;
+  background: transparent;
+  display: none;
 }
 
 .message-area::-webkit-scrollbar-thumb {
