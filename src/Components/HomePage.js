@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; 
 import Home from '../sunrise.png';
@@ -6,21 +6,9 @@ import Home from '../sunrise.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faTasks, faBookReader, faHourglassHalf, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 
+const titles = ["Plan", "Schedule", "Organize", "Predict"];
 
 
-// Header component (reusable for both pages)
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <button>Login</button>
-  </header>
-);
 
 // Feature component for the four features at the bottom of the homepage
 const Feature = ({ icon, title, description }) => (
@@ -35,75 +23,97 @@ const Feature = ({ icon, title, description }) => (
 
 
 // Homepage component
-const Homepage = () => (
-    <div>
-    <nav className="nav">
-      <div className="logo">Tau</div>
-      <div className="buttons">
-      <Link to="/Calendar">
-        <button className="button">Calendar</button>
-      </Link>
-      <Link to="/Login">
-        <button className="button">Login</button>
-      </Link>
-        
-      </div>
-    </nav>
+const Homepage = () => {
+    const [titleIndex, setTitleIndex] = useState(0);
+    const [fade, setFade] = useState('fade-in');
 
-    <header className="hero">
-    <h1>Plan with Tau</h1>
-      <p>Never miss a deadline, meeting or ???</p>
-      <Link to="/ChatBot">
-        <button className="bigger-button">Talk with Tau</button>
-      </Link>
+    useEffect(() => {
+      const changeTitle = () => {
+        setFade('fade-out');
+        setTimeout(() => {
+          setTitleIndex(currentIndex => (currentIndex + 1) % titles.length);
+          setFade('fade-in');
+        }, 1000); // Wait for fade-out to complete
+      };
+  
+      // Change title every 4 seconds
+      const intervalId = setInterval(changeTitle, 4000);
+  
+      // Cleanup interval on component unmount
+      return () => clearInterval(intervalId);
+    }, []);
 
-    </header>
-    <div className="image-container">
-      <img src={Home} width="1500" height = "250" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
-    </div>
+    return (
     
-    <h1> What can you do with Tau?</h1>
-    <div className="feature-grid">
-      <div className="feature-container">
-        <Feature
-          icon={faCalendarAlt}
-          title="Automated Calendar Entries"
-          description="with Google Calendar Integration"
-        />
+      <div>
+      <nav className="nav">
+        <div className="logo">Tau</div>
+        <div className="buttons">
+        <Link to="/Calendar">
+          <button className="button">Calendar</button>
+        </Link>
+        <Link to="/Login">
+          <button className="button">Login</button>
+        </Link>
+          
+        </div>
+      </nav>
+
+      <header className="hero">
+        <h1><span className={fade}>{titles[titleIndex]}</span> with Tau</h1>
+        <p>Your AI Personal Assistant, Specifically Designed for ADHD Time Management – Predicting, Organizing, and Empowering You to Seize Control of Your Day!</p>
+        <Link to="/ChatBot">
+          <button className="bigger-button">Talk with Tau</button>
+        </Link>
+      </header>
+
+      <div className="image-container">
+        <img src={Home} width="1500" height = "250" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
       </div>
-      <div className="feature-container">
-        <Feature
-          icon={faTasks}
-          title="Dynamic Task Scheduling"
-          description="from your text messages"
-        />
+      
+      <h1> What can you do with Tau?</h1>
+      <div className="feature-grid">
+        <div className="feature-container">
+          <Feature
+            icon={faCalendarAlt}
+            title="Automated Calendar Entries"
+            description="with Google Calendar Integration"
+          />
+        </div>
+        <div className="feature-container">
+          <Feature
+            icon={faTasks}
+            title="Dynamic Task Scheduling"
+            description="from your text messages"
+          />
+        </div>
+        <div className="feature-container">
+          <Feature
+            icon={faBookReader}
+            title="Study Style Integration"
+            description="personalized to you"
+          />
+        </div>
+        <div className="feature-container">
+          <Feature
+            icon={faHourglassHalf}
+            title="Task Duration Prediction"
+            description="to increase productivity"
+          />
+        </div>
       </div>
-      <div className="feature-container">
-        <Feature
-          icon={faBookReader}
-          title="Study Style Integration"
-          description="personalized to you"
-        />
+
+      <div className="feature-grid">
+        {/* ... (existing feature elements) */}
+        {/* Add the App component here */}
+
       </div>
-      <div className="feature-container">
-        <Feature
-          icon={faHourglassHalf}
-          title="Task Duration Prediction"
-          description="to increase productivity"
-        />
-      </div>
+
+      <footer className="footer">
+        <p>© 2024 Tau. All rights reserved.</p>
+      </footer>
     </div>
-
-    <div className="feature-grid">
-      {/* ... (existing feature elements) */}
-      {/* Add the App component here */}
-
-    </div>
-
-    <footer className="footer">
-      <p>© 2024 Tau. All rights reserved.</p>
-    </footer>
-  </div>
-);
+  );
+};
 
 export default Homepage;
