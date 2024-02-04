@@ -84,35 +84,44 @@ function Calendar() {
 
 
   const generateWeekView = () => {
-    const weekDays = [];
-    const { start, end } = getWeekBounds(currentDate);
-    for (let i = 0; i < 7; i++) {
-      const day = new Date(start);
-      day.setDate(day.getDate() + i);
-      weekDays.push(
-        <div key={i} className="calendar-week-day">
-          {/* Each day's date and events will be rendered here */}
-          {day.toLocaleDateString()}
-          {/* Placeholder for events */}
-          <div className="calendar-event">Event</div>
-        </div>
-      );
-    }
-    
-    return (
-      <div className="calendar-week-view">
-        <div className="calendar-time-axis">
-          {generateTimeSlots()}
-        </div>
-        <div className="calendar-week-grid">
-          {weekDays}
-        </div>
+  const weekDays = [];
+  const { start } = getWeekBounds(currentDate);
+
+  for (let i = 0; i < 7; i++) {
+    const day = new Date(start);
+    day.setDate(day.getDate() + i);
+
+    weekDays.push(
+      <div key={i} className="calendar-week-day">
+        {/* Each day's date and events will be rendered here */}
+        {day.toLocaleDateString()}
+        {/* Placeholder for events */}
+        <div className="calendar-event">Event</div>
       </div>
     );
-  };
+  }
+
+  return (
+    <div className="calendar-week-view">
+      <div className="calendar-time-axis">
+        {generateTimeSlots()}
+      </div>
+      <div className="calendar-week-grid">
+        {weekDays}
+      </div>
+    </div>
+  );
+};
 
   const generateDayView = () => {
-    // Day view implementation
+    return (
+      <div className="calendar-day-view">
+        {/* Render a single day with time slots */}
+        {generateTimeSlots()}
+        {/* Placeholder for events */}
+        <div className="calendar-event">Event</div>
+      </div>
+    );
   };
 
   // Render view based on state

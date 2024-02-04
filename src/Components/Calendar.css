@@ -34,6 +34,12 @@
   border: 3px solid #ccc;
 }
 
+.calendar-week-view,
+.calendar-day-view {
+  display: flex;
+  margin-top: 10px;
+}
+
 .calendar-days {
   display: flex;
   justify-content: left;
@@ -52,6 +58,34 @@
   border: 2px solid #ccc;
 }
 
+.calendar-time-axis {
+  flex: 0 0 auto;
+  background-color: #2a2a2a;
+}
+
+.calendar-time-slot {
+  height: 60px; /* height for each hour slot */
+  border-bottom: 1px solid #555; /* darker line color for separation */
+  color: #ccc; /* lighter text color for visibility */
+  display: flex;
+  align-items: center; /* center the time text */
+  padding-left: 10px; /* some padding for the text */
+}
+
+
+.calendar-week-grid {
+  display: flex;
+  width: 100%;
+}
+
+.calendar-week-day {
+  flex: 1; /* Make each day column take up equal space */
+  border-left: 1px solid #555; /* dark line color for separation */
+  border-right: 1px solid #555; /* dark line color for separation */
+  display: flex;
+  flex-direction: column; /* stack time slots vertically */
+}
+
 .event {
   background-color: #4e5fea;
   color: white;
@@ -62,20 +96,34 @@
   margin-top: 12px;
 }
 
+
+.calendar-event {
+  position: relative; /* position relative to the day column */
+  margin: 2px 0; /* add some margin for visual separation */
+  background-color: #d14f4f; /* event background color */
+}
+
 .event:hover {
   background-color: #838fe9;
 }
 
 .calendar-table {
   background-color: #1a1a1a;
+  border: 1.5px solid #ffffff;
   width: 95vw;
   border-radius: 8px;
 }
+
 
 .calendar-header-row {
   background-color: #8a63d2;
   border: 2px solid #ccc;
   font-size: 1.2rem;
+}
+
+.calendar-header-row th {
+  text-align: center;
+  border-bottom: 1px solid #555;
 }
 
 
