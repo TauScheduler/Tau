@@ -1,6 +1,8 @@
 /* Login.css */
 
-/* .login-body {
+/* Login.css */
+
+.login-body {
   font-family: 'Open Sans', sans-serif;
   background: #040015;
   color: white;
@@ -9,7 +11,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-} */
+}
 
 .login-container {
   background-color: #8a63d2;
@@ -20,9 +22,13 @@
   align-items: center;
   padding: 20px;
   width: 80%;
-  max-width: 400px; 
-  margin: 0 10px; 
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 
 .logo-container {
   text-align: center;
@@ -35,11 +41,15 @@
 
 .form-container {
   text-align: center;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 label {
