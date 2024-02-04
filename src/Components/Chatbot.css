@@ -14,6 +14,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   background: #040015;
+  text-align: left !important;
 }
 
 .message-area {
@@ -23,6 +24,8 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 60vw;
+  align-self: center;
 }
 
 /* Scrollbar Styles */

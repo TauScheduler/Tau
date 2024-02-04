@@ -5,7 +5,16 @@ import Message from './Message';
 
 function ChatBot() {
   const [messages, setMessages] = React.useState([]);
-  const messagesEndRef = useRef(null); // Add this line
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      // Send a bot message when the component mounts
+      const botMessage = "Howdy! How can I assist you?";
+      setMessages([{ text: botMessage, isUserMessage: false }]);
+    }, 1000);
+    
+  }, []); // Empty dependency array to ensure it runs only once on mount
 
   useEffect(() => {
     // Scroll to the bottom of the message area when messages change
@@ -16,16 +25,23 @@ function ChatBot() {
     if (newMessage.trim() !== '') {
       setMessages([...messages, { text: newMessage, isUserMessage: true }]);
     }
-
-    // Here you would implement the logic to get a response from your chatbot
-
-    // Simulate a delay for the bot response
-    setTimeout(() => {
-      // This is where you could integrate a real chatbot API if desired
-      const botMessage = "Message Received! :)";
-      setMessages((prevMessages) => [...prevMessages, { text: botMessage, isUserMessage: false }]);
-    }, 2000); // 2000ms delay
-    
+  
+    // Check if the user's message is "thanks"
+    if (newMessage.trim().toLowerCase() === 'thanks') {
+      setTimeout(() => {
+        // This is where you could integrate a real chatbot API if desired
+        const botResponse = "You're welcome! Happy to help :)";
+        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
+      }, 3000);
+    } else {
+      // Implement the logic to get a response from your chatbot for other inputs
+      // Simulate a delay for the bot response
+      setTimeout(() => {
+        // This is where you could integrate a real chatbot API if desired
+        const botResponse = "Task Created! Check your calendar to see all of your tasks. :)";
+        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
+      }, 2000); // 2s delay
+    }
   };
 
   return (

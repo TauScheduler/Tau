@@ -2,17 +2,18 @@
   display: flex;
   gap: 10px;
   align-items: center; /* Vertically align the input and button */
+  height: 6vh;
 }
 
 .input-container input[type='text'] {
   flex-grow: 1;
   padding: 10px;
   border: 1px solid #4e5fea; /* Set border-style to 'solid' and specify the border color */
-  border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
   width: 60vw;
   background-color: #040015;
   color: white;
+  border-radius: 12px;
 }
 
 .input-container button {
@@ -20,9 +21,9 @@
   border: none;
   background-color: #4e5fea;
   color: white;
-  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 12px;
 }
 
 .input-container button:hover {
