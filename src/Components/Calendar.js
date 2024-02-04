@@ -1,73 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.css'; 
+//import './HomePage.css'; 
+import './Calendar.css'
 import Home from '../sunrise.png';
 
 
-// Header component (reusable for both pages)
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <button>Login</button>
-  </header>
-);
-
-// Feature component for the four features at the bottom of the homepage
-const Feature = ({ icon, title, description }) => (
-  <div className="feature">
-    <i className={icon}></i> {/* Assuming you're using a font icon library */}
-    <h3>{title}</h3>
-    <p>{description}</p>
-  </div>
-);
-
-// Homepage component
-const Calendar = () => (
-    <div>
-    <nav className="nav">
-      <div className="logo">Tau</div>
-      <div className="buttons">
-      <Link to="/chat">
-      <button className="button">Talk with Tau</button>
-    </Link>
-        <button className="button">Login</button>
-        
+function Calendar() {
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  
+    // Generate the days of the week header
+    const weekHeader = daysOfWeek.map((day, index) => (
+      <div key={index} className="calendar-day-header">
+        {day}
       </div>
-    </nav>
-
-    <header className="hero">
-      <h1>Calendar</h1>
-      <p>Never miss a deadline, meeting or ???</p>
-    </header>
-
-    <div className="image-container">
-      <img src={Home} width="1000" height = "500" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
-    </div>
-
-    <div className="feature-grid">
-      <div className="feature">
-        <i className="fas fa-rocket"></i>
-        <h2>Built for speed</h2>
-        <p>Instantly sync your notes across devices</p>
+    ));
+  
+    // Generate the days of the month
+    const daysOfMonth = [];
+    for (let day = 1; day <= 31; day++) {
+      // You can add your logic to display events on specific days
+      daysOfMonth.push(
+        <div key={day} className="calendar-day">
+          {day}
+          {/* You can render events here based on your data */}
+          <div className="event">9 AM Standup</div>
+        </div>
+      );
+    }
+  
+    return (
+      <div className="calendar">
+        <div className="calendar-header">
+          <button className="button">Previous</button>
+          <h2>February 2024</h2>
+          <button className="button">Next</button>
+        </div>
+  
+        <div className="calendar-grid">
+          <div className="calendar-days-of-week">{weekHeader}</div>
+          <div className="calendar-days">{daysOfMonth}</div>
+        </div>
       </div>
-      <div className="feature">
-        <i className="fas fa-project-diagram"></i>
-        <h2>Networked notes</h2>
-        <p>Form a graph of ideas with backlinked notes</p>
-      </div>
-      {/* Add similar feature elements */}
-    </div>
-
-    <footer className="footer">
-      <p>© 2024 Tau. All rights reserved.</p>
-    </footer>
-  </div>
-);
+    );
+  }
+  
+  
 
 export default Calendar;
