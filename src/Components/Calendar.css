@@ -96,4 +96,20 @@
   border-color: transparent;
 }
 
+.viewbutton {
+  background-color: #6372d2;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid #6372d2;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.viewbutton:hover {
+  background-color: #8e96cd;
+  border-color: transparent;
+}
+
 /* Add any additional styles as needed */
