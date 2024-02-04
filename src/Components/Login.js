@@ -1,6 +1,6 @@
 import React from 'react';
 import './Login.css'; 
-import TauLogo from '2024/Tau/src/TAU-2.png'; 
+import TauLogo from '../TAU-2.png'; 
 import { Link } from 'react-router-dom';
 
 function Login() {
