@@ -6,6 +6,23 @@ import { Link } from 'react-router-dom';
 function Login() {
   return (
     <div className="Harsheesha">
+      <nav className="nav">
+      <div className="logo-container">
+        <img src={TauLogo} alt="Tau Logo" />
+      </div>
+        <div className="buttons">
+        <Link to="/">
+          <button className="button">Home</button>
+        </Link>
+        <Link to="/Chatbot">
+          <button className="button">Talk with Tau</button>
+        </Link>
+        <Link to="/Calendar">
+          <button className="button">Calendar</button>
+        </Link>
+          
+        </div>
+      </nav>
     <div className="login-container">
       <div className="logo-container">
         <h1>Tau</h1>

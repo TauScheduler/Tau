@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import TauLogo from '../TAU-2.png'; 
 import './Chatbot.css'; 
+import { Link } from 'react-router-dom';
 import ChatInput from './ChatInput';
 import Message from './Message';
 
@@ -45,6 +47,24 @@ function ChatBot() {
   };
 
   return (
+    <div>
+      <nav className="nav">
+        <div className="logo-container">
+        <img src={TauLogo} alt="Tau Logo" />
+      </div>
+        <div className="buttons">
+        <Link to="/">
+          <button className="button">Home</button>
+        </Link>
+        <Link to="/Calendar">
+          <button className="button">Calendar</button>
+        </Link>
+        <Link to="/Login">
+          <button className="button">Login</button>
+        </Link>
+          
+        </div>
+      </nav>
     <div className="Chat">
       <div className="message-area">
         {messages.map((message, index) => (
@@ -53,6 +73,7 @@ function ChatBot() {
         <div ref={messagesEndRef}></div>
       </div>
       <ChatInput onSendMessage={handleSendMessage} />
+    </div>
     </div>
   );
 }

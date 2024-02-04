@@ -26,6 +26,24 @@ const SignUp = () => {
   };
 
   return (
+    <div>
+      <nav className="nav">
+      <div className="logo-container">
+        <img src={TauLogo} alt="Tau Logo" />
+      </div>
+        <div className="buttons">
+        <Link to="/">
+          <button className="button">Home</button>
+        </Link>
+        <Link to="/Chatbot">
+          <button className="button">Talk with Tau</button>
+        </Link>
+        <Link to="/Calendar">
+          <button className="button">Calendar</button>
+        </Link>
+          
+        </div>
+      </nav>
     <div className="login-body Harsheesha">
       <div className="login-container form-container">
         <div className="logo-container">
@@ -85,6 +103,7 @@ const SignUp = () => {
       <footer className="footer">
         <p>© 2024 Tau. All rights reserved.</p>
       </footer>
+    </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TauLogo from '../TAU-2.png'; 
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './Calendar.css';
@@ -136,8 +137,25 @@ function Calendar() {
     }
   };
 
-  return (
+  return (      
     <div className="calendar">
+    <nav className="nav">
+      <div className="logo-container">
+        <img src={TauLogo} alt="Tau Logo" />
+      </div>
+        <div className="buttons">
+        <Link to="/">
+          <button className="button">Home</button>
+        </Link>
+        <Link to="/Chatbot">
+          <button className="button">Talk with Tau</button>
+        </Link>
+        <Link to="/Login">
+          <button className="button">Login</button>
+        </Link>
+          
+        </div>
+      </nav>
       <div className="calendar-header">
         <button className="button" onClick={() => changeMonth(-1)}>
           Previous

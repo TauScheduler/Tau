@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import TauLogo from '../TAU-2.png'; 
 import { Link } from 'react-router-dom';
 import './HomePage.css'; 
 import Home from '../sunrise.png';
@@ -47,7 +48,9 @@ const Homepage = () => {
     
       <div>
       <nav className="nav">
-        <div className="logo">Tau</div>
+        <div className="logo-container">
+        <img src={TauLogo} alt="Tau Logo" />
+        </div>
         <div className="buttons">
         <Link to="/Calendar">
           <button className="button">Calendar</button>
