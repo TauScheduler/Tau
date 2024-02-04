@@ -19,6 +19,12 @@ function ChatBot() {
     }, 500);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
   return (
     <div className="App">
       <div className="chat-container">
@@ -38,6 +44,7 @@ function ChatBot() {
             placeholder="Type your message..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           <button onClick={handleSendMessage}>Send</button>
         </div>
