@@ -33,9 +33,12 @@ const Homepage = () => (
     <nav className="nav">
       <div className="logo">Tau</div>
       <div className="buttons">
+      <Link to="/Calendar">
+        <button className="button">Calendar</button>
+      </Link>
       <Link to="/ChatBot">
-      <button className="button">Talk with Tau</button>
-    </Link>
+        <button className="button">Talk with Tau</button>
+      </Link>
         <button className="button">Login</button>
         
       </div>
