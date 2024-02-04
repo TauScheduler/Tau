@@ -36,10 +36,9 @@ const Homepage = () => (
       <Link to="/Calendar">
         <button className="button">Calendar</button>
       </Link>
-      <Link to="/ChatBot">
-        <button className="button">Talk with Tau</button>
-      </Link>
+      <Link to="/Login">
         <button className="button">Login</button>
+      </Link>
         
       </div>
     </nav>
@@ -47,10 +46,13 @@ const Homepage = () => (
     <header className="hero">
       <h1> Plan with Tau</h1>
       <p>Never miss a deadline, meeting or ???</p>
-    </header>
+      <Link to="/ChatBot">
+        <button className="bigger-button">Talk with Tau</button>
+      </Link>
 
+    </header>
     <div className="image-container">
-      <img src={Home} width="1000" height = "500" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
+      <img src={Home} width="1000" height = "400" alt="Abstract image representing organization with a dark background and a purple light ring at the center, giving a techy feel" className="rounded-lg" />
     </div>
 
     <div className="feature-grid">

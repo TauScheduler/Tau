@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import HomePage from './Components/HomePage';
 import ChatBot from './Components/Chatbot';
-import Calendar from './Components/Calendar'
+import Calendar from './Components/Calendar';
+import Login from './Components/Login';
 import MeetingsPage from './Components/MeetingsPage';
 
 
@@ -13,14 +14,11 @@ function App() {
   
   <Router>
       <div className="App">
-             
-
-       
-
         <Routes> {/* Wrap your routes in a <Routes> component */}
           <Route path="/" element={<HomePage />} />
           <Route path="/ChatBot" element={<ChatBot />} />
           <Route path="/Calendar" element={<Calendar />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </div>
     </Router>
