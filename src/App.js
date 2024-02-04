@@ -7,6 +7,7 @@ import ChatBot from './Components/Chatbot';
 import Calendar from './Components/Calendar';
 import Login from './Components/Login';
 import MeetingsPage from './Components/MeetingsPage';
+import SignUp from './Components/SignUp';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/ChatBot" element={<ChatBot />} />
           <Route path="/Calendar" element={<Calendar />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>
     </Router>
