@@ -93,14 +93,14 @@ const Homepage = () => {
         <div className="feature-container">
           <Feature
             icon={faBookReader}
-            title="Study Style Integration"
+            title="Workstyle Integration"
             description="personalized to you"
           />
         </div>
         <div className="feature-container">
           <Feature
             icon={faHourglassHalf}
-            title="Task Duration Prediction"
+            title="Accountability & Feedback System"
             description="to increase productivity"
           />
         </div>
