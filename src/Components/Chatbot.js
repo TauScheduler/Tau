@@ -12,7 +12,7 @@ function ChatBot() {
   useEffect(() => {
     setTimeout(() => {
       // Send a bot message when the component mounts
-      const botMessage = "Hi, I'm Tau! I'm an AI-powered scheduling assistant. Text me about a task or upcoming event and I'll take care of scheduling it for you.";
+      const botMessage = "Howdy I'm Tau! How can I assist you?";
       setMessages([{ text: botMessage, isUserMessage: false }]);
     }, 1000);
     
@@ -29,10 +29,16 @@ function ChatBot() {
     }
   
     // Check if the user's message is "thanks"
-    if (newMessage.trim().toLowerCase() === 'thanks' || newMessage.trim().toLowerCase() === 'thank you') {
+    if (newMessage.trim().toLowerCase() === 'hey, can you schedule time for me tomorrow from 1 to 7 pm to work on algos homework' || newMessage.trim().toLowerCase() === 'thank you') {
       setTimeout(() => {
         // This is where you could integrate a real chatbot API if desired
-        const botResponse = "You're welcome! Happy to help :)";
+        const botResponse = "Sure! Would you also like me to schedule 15 minute breaks every 2 hours? Taking breaks is good for productivity!";
+        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
+      }, 3000);
+    } else if (newMessage.trim().toLowerCase() === 'i have a two hour long sarp meeting at 2 pm tomorrow') {
+      setTimeout(() => {
+        // This is where you could integrate a real chatbot API if desired
+        const botResponse = "Looks like we're in a bit of a time crunch! You won't have enough time to complete your Math 207 homework before the deadline at 11:59 PM tomorrow. Would you like to extend your work hours?";
         setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
       }, 3000);
     } else {

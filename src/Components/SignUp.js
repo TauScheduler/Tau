@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TimePicker from 'react-time-picker';
 import './Login.css';
 import TauLogo from '../TAU-2.png'; 
 
@@ -9,6 +10,10 @@ const SignUp = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    studyTime: 'morning', 
+    studySessionLength: '30',
+    workHourStartTime: '08:00', // Default start time
+    workHourEndTime: '17:00', // Default end time
   });
 
   const [studyTime, setStudyTime] = useState('morning');
@@ -17,6 +22,10 @@ const SignUp = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleTimeChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
   };
 
   const handleSubmit = (e) => {
@@ -45,12 +54,8 @@ const SignUp = () => {
         </div>
       </nav>
     <div className="login-body Harsheesha">
-      <div className="login-container form-container">
-        <div className="logo-container">
-          <img src={TauLogo} alt="Tau Logo" />
-        </div>
-        
-        <form onSubmit={handleSubmit} className="signup-form">
+      <div className="signup-container form-container">
+        {/* <form onSubmit={handleSubmit} className="signup-form">
           <h2>Create an Account</h2>
           <label>Name:  </label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required />
@@ -95,9 +100,89 @@ const SignUp = () => {
 
           <button type="submit">Sign Up</button>
 
-        </form>
+        </form> */}
+        <form onSubmit={handleSubmit} className="signup-form">
+          <h2>Sign Up</h2>
+          <p>Enter your details below to create your account and get started.</p>
 
-        <Link to="/Login">Already have an account? Login here.</Link>
+          <div className="input-group">
+            <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
+            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+          </div>
+
+          <div className="input-group">
+            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+          </div>
+
+          <div className="time-input-group">
+            <div className="time-input-container">
+              <label htmlFor="workHourStartTime" className="form-label">Work Hours Start Time:</label>
+              <input 
+                type="time" 
+                id="workHourStartTime"
+                name="workHourStartTime"
+                onChange={(e) => handleTimeChange('workHourStartTime', e.target.value)}
+                value={formData.workHourStartTime}
+                required
+              />
+            </div>
+            <div className="time-input-container">
+              <label htmlFor="workHourEndTime" className="form-label">Work Hours End Time:</label>
+              <input 
+                type="time"
+                id="workHourEndTime"
+                name="workHourEndTime"
+                onChange={(e) => handleTimeChange('workHourEndTime', e.target.value)}
+                value={formData.workHourEndTime}
+                required
+              />
+            </div>
+          </div>
+
+          <div className = "preference-group">
+            <div className="dropdown-group">
+              <label htmlFor="studyTime" className="form-label">Study Time Preference:</label>
+              <select 
+                name="studyTime" 
+                id="studyTime"
+                value={formData.studyTime} 
+                onChange={handleChange} 
+                required
+                className="form-select"
+              >
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+              </select>
+            </div>
+
+            <div className="dropdown-group">
+              <label htmlFor="studySessionLength" className="form-label">Study Session Length:</label>
+              <select 
+                name="studySessionLength" 
+                id="studySessionLength"
+                value={formData.studySessionLength} 
+                onChange={handleChange} 
+                required
+                className="form-select"
+              >
+                <option value="15">15 min</option>
+                <option value="30">30 min</option>
+                <option value="45">45 min</option>
+                <option value="60">1 hour</option>
+                <option value="90">90 min</option>
+                <option value="120">2 hours</option>
+              </select>
+            </div>
+          </div>
+
+          
+
+          <button type="submit">Confirm</button>
+          <button type="button">Cancel</button>
+          <a href="/Login">Already have an account? Login here.</a>
+        </form>
       </div>
 
       <footer className="footer">
