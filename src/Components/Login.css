@@ -161,7 +161,6 @@ body, html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 5px;
   width: calc(50% - 5px);
 }
 
@@ -262,4 +261,23 @@ body, html {
 input[type="time"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: black  !important;
+}
+
+.signup-form button[type="submit"] {
+  background-color: #4a326f;
+  color: white;
+  padding: 10px 90px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: calc(100% - 5px); /* Adjust the width as needed */
+  margin-bottom: 15px;
+}
+
+/* Adjust the width of the container to match the button */
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 100%; /* Adjust the width as needed */
 }

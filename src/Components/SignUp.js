@@ -178,8 +178,10 @@ const SignUp = () => {
           </div>
 
           
-
-          <button type="submit">Confirm</button>
+          <Link to="/ChatBot">
+            <button type="submit">Confirm</button>
+          </Link>
+          
           <button type="button">Cancel</button>
           <a href="/Login">Already have an account? Login here.</a>
         </form>
