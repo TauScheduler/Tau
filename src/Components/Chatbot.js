@@ -7,6 +7,7 @@ import Message from './Message';
 
 function ChatBot() {
   const [messages, setMessages] = React.useState([]);
+  const [userMessageCount, setUserMessageCount] = useState(0);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -26,30 +27,27 @@ function ChatBot() {
   const handleSendMessage = (newMessage) => {
     if (newMessage.trim() !== '') {
       setMessages([...messages, { text: newMessage, isUserMessage: true }]);
+      setUserMessageCount(userMessageCount + 1);
     }
-  
+
+    setTimeout(() => {
+      let botResponse = '';
+      if (userMessageCount === 0) {
+        botResponse = "Sure! Would you also like me to schedule 15 minute breaks every 2 hours? Taking breaks is good for productivity!";
+      } else if (userMessageCount == 1) {
+        botResponse = "Great! Your work time has been scheduled along with 15 minute breaks!"
+      } else if (userMessageCount === 2) {
+        botResponse = "Looks like we're in a bit of a time crunch! You won't have enough time to complete your Math 207 homework before the deadline at 11:59 PM tomorrow. Would you like to extend your work hours?";
+      } else if (userMessageCount == 3) {
+        botResponse = "Sure thing! Your work hours have been extended until 8 PM! "
+      } else {
+        // Default response for other messages
+        botResponse = "Task Created! Check your calendar to see all of your tasks. :)";
+      }
+      setMessages(prevMessages => [...prevMessages, { text: botResponse, isUserMessage: false }]);
+    }, 2000);
     // Check if the user's message is "thanks"
-    if (newMessage.trim().toLowerCase() === 'hey, can you schedule time for me tomorrow from 1 to 7 pm to work on algos homework' || newMessage.trim().toLowerCase() === 'thank you') {
-      setTimeout(() => {
-        // This is where you could integrate a real chatbot API if desired
-        const botResponse = "Sure! Would you also like me to schedule 15 minute breaks every 2 hours? Taking breaks is good for productivity!";
-        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
-      }, 3000);
-    } else if (newMessage.trim().toLowerCase() === 'i have a two hour long sarp meeting at 2 pm tomorrow') {
-      setTimeout(() => {
-        // This is where you could integrate a real chatbot API if desired
-        const botResponse = "Looks like we're in a bit of a time crunch! You won't have enough time to complete your Math 207 homework before the deadline at 11:59 PM tomorrow. Would you like to extend your work hours?";
-        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
-      }, 3000);
-    } else {
-      // Implement the logic to get a response from your chatbot for other inputs
-      // Simulate a delay for the bot response
-      setTimeout(() => {
-        // This is where you could integrate a real chatbot API if desired
-        const botResponse = "Task Created! Check your calendar to see all of your tasks. :)";
-        setMessages((prevMessages) => [...prevMessages, { text: botResponse, isUserMessage: false }]);
-      }, 2000); // 2s delay
-    }
+    
   };
 
   return (
