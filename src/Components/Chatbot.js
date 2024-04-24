@@ -33,12 +33,10 @@ function ChatBot() {
     setTimeout(() => {
       let botResponse = '';
       if (userMessageCount === 0) {
-        botResponse = "Sure! Would you also like me to schedule 15 minute breaks every 2 hours? Taking breaks is good for productivity!";
-      } else if (userMessageCount == 1) {
-        botResponse = "Great! Your work time has been scheduled along with 15 minute breaks!"
-      } else if (userMessageCount === 2) {
-        botResponse = "Looks like we're in a bit of a time crunch! You won't have enough time to complete your Math 207 homework before the deadline at 11:59 PM tomorrow. Would you like to extend your work hours?";
-      } else if (userMessageCount == 3) {
+        botResponse = "Sure! Your meeting with Emily has been scheduled for tomorrow!";
+      } else if (userMessageCount === 1) {
+        botResponse = "Looks like we're in a bit of a time crunch! You won't have enough time to complete your Math 208 homework before the deadline at 11:59 PM on Thursday. Would you like to extend your work hours?";
+      } else if (userMessageCount == 2) {
         botResponse = "Sure thing! Your work hours have been extended until 8 PM! "
       } else {
         // Default response for other messages
